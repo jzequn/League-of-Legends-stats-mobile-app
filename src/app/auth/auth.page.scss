@@ -1,0 +1,13 @@
+// ion-content{
+//     text-align: center;
+// }
+
+.card-content{
+    height:200px;
+    position: relative;
+    .login{
+        position: absolute;
+        right:5px;
+        bottom:5px;
+    }
+}
