@@ -11,7 +11,7 @@ export class ChampionService {
   }
 
   fetchChampions() {
-    this.http.get<any>('https://jsonplaceholder.typicode.com/todos/1').subscribe(img =>
+    this.http.get<any>('https://ddragon.leagueoflegends.com/cdn/6.24.1/data/en_US/champion.json').subscribe(img =>
       console.log(img)
     );
   }

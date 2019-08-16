@@ -8,11 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChampionPage implements OnInit {
 
-  
+  champions: [];
 
   constructor(private championService: ChampionService) { }
 
   ngOnInit() {
   }
 
+  fetchChampions() {
+    this.championService.fetchChampions();
+  }
 }

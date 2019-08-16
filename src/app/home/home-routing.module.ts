@@ -28,12 +28,16 @@ const routes: Routes = [
                 children: [
                     {
                         path: '',
-                        loadChildren: './champion/champion.module#ChampionPageModule'
+                        loadChildren:
+                            //  './champion/champion.module#ChampionPageModule'
+                            () => import('./champion/champion.module').then(m => m.ChampionPageModule)
                     },
                     {
                         path: ':championId',
                         loadChildren:
                             './champion/champion-detail/champion-detail.module#ChampionDetailPageModule'
+                        // () => import('./champion/champion.module').then(m => m.ChampionPageModule)
+                        // I dont know if issue will happen or not, just comment this out
                     }
                 ]
             },
@@ -42,12 +46,15 @@ const routes: Routes = [
                 children: [
                     {
                         path: '',
-                        loadChildren: './item/item.module#ItemPageModule'
+                        loadChildren:
+                            // './item/item.module#ItemPageModule'
+                            () => import('./item/item.module').then(m => m.ItemPageModule)
                     },
                     {
                         path: ':itemId',
                         loadChildren:
                             './item/item-detail/item-detail.module#ItemDetailPageModule'
+                        // () => import('./champion/champion.module').then(m => m.ChampionPageModule)
                     }
                 ]
             },
