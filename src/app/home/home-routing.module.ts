@@ -13,11 +13,7 @@ const routes: Routes = [
                     {
                         path: '',
                         loadChildren: './search/search.module#SearchPageModule'
-                    },
-                    // {
-                    //     path: ':userId',
-                    //     loadChildren: './search/user/user.module#UserModulePage'
-                    // },
+                    }
                 ]
             },
             {
@@ -26,11 +22,7 @@ const routes: Routes = [
                     {
                         path: '',
                         loadChildren: './champion/champion.module#ChampionPageModule'
-                    },
-                    // {
-                    //     path: ':userId',
-                    //     loadChildren: './search/user/user.module#UserModulePage'
-                    // },
+                    }
                 ]
             },
             {
@@ -39,11 +31,7 @@ const routes: Routes = [
                     {
                         path: '',
                         loadChildren: './item/item.module#ItemPageModule'
-                    },
-                    // {
-                    //     path: ':userId',
-                    //     loadChildren: './search/user/user.module#UserModulePage'
-                    // },
+                    }
                 ]
             },
             {
@@ -58,7 +46,11 @@ const routes: Routes = [
         redirectTo: '/home/tabs/search',
         pathMatch: 'full'
 
-    }
+    },
+    { path: 'champion-detail', loadChildren: './champion/champion-detail/champion-detail.module#ChampionDetailPageModule' },
+    { path: 'item-detail', loadChildren: './item/item-detail/item-detail.module#ItemDetailPageModule' },
+    { path: 'summoner', loadChildren: './search/summoner/summoner.module#SummonerPageModule' }
+
 ];
 
 @NgModule({
