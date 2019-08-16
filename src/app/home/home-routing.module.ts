@@ -1,7 +1,6 @@
-import { HomePage } from './home.page';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-
+import { HomePage } from './home.page';
 const routes: Routes = [
     {
         path: 'tabs',
@@ -12,7 +11,15 @@ const routes: Routes = [
                 children: [
                     {
                         path: '',
-                        loadChildren: './search/search.module#SearchPageModule'
+                        loadChildren:
+                            // './search/search.module#SearchPageModule'
+                            () => import('./search/search.module').then(m => m.SearchPageModule)
+                    },
+                    {
+                        path: ':summonerId',
+                        loadChildren:
+                            './search/summoner/summoner.module#SummonerPageModule'
+
                     }
                 ]
             },
@@ -22,6 +29,11 @@ const routes: Routes = [
                     {
                         path: '',
                         loadChildren: './champion/champion.module#ChampionPageModule'
+                    },
+                    {
+                        path: ':championId',
+                        loadChildren:
+                            './champion/champion-detail/champion-detail.module#ChampionDetailPageModule'
                     }
                 ]
             },
@@ -31,6 +43,11 @@ const routes: Routes = [
                     {
                         path: '',
                         loadChildren: './item/item.module#ItemPageModule'
+                    },
+                    {
+                        path: ':itemId',
+                        loadChildren:
+                            './item/item-detail/item-detail.module#ItemDetailPageModule'
                     }
                 ]
             },
@@ -46,11 +63,7 @@ const routes: Routes = [
         redirectTo: '/home/tabs/search',
         pathMatch: 'full'
 
-    },
-    { path: 'champion-detail', loadChildren: './champion/champion-detail/champion-detail.module#ChampionDetailPageModule' },
-    { path: 'item-detail', loadChildren: './item/item-detail/item-detail.module#ItemDetailPageModule' },
-    { path: 'summoner', loadChildren: './search/summoner/summoner.module#SummonerPageModule' }
-
+    }
 ];
 
 @NgModule({
