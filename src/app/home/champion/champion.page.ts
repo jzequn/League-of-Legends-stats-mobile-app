@@ -8,14 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChampionPage implements OnInit {
 
-  champions: [];
+  champions: object[] = [];
 
   constructor(private championService: ChampionService) { }
 
   ngOnInit() {
+    // fetch the champions only once
+    if (this.champions.length === 0) {
+      this.championService.fetchChampions();
+      this.champions = this.championService.championList;
+      // console.log(this.champions);
+    }
   }
 
-  fetchChampions() {
-    this.championService.fetchChampions();
+  imageUrl(name: string) {
+    return `https://ddragon.leagueoflegends.com/cdn/6.24.1/img/champion/${name}`;
   }
+
 }
