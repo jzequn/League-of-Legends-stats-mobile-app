@@ -1,5 +1,8 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="primary">
+      <ion-buttons slot="start" menuId="first">
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
     <ion-title>Champion</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -8,7 +11,7 @@
 
   <ion-grid>
     <ion-row>
-      <ion-col size="10" size-md offset="1">
+      <ion-col>
         <ion-card>
           <ion-card-content>
             <ion-item *ngFor="let champion of champions" detail>
