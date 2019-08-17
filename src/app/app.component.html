@@ -4,29 +4,21 @@
   <ion-menu side="start" menuId="first">
     <ion-header>
       <ion-toolbar color="primary">
-        <ion-title>Start Menu</ion-title>
+        <ion-title>Menu</ion-title>
       </ion-toolbar>
     </ion-header>
     <ion-content>
       <ion-list>
         <ion-menu-toggle>
-          <ion-item lines="none" routerLink="#">
-            <ion-label>Item one</ion-label>
+          <ion-item lines="none" routerLink="/auth">
+            <ion-icon name="ios-person" slot="start"></ion-icon>
+            <ion-label>Account</ion-label>
           </ion-item>
         </ion-menu-toggle>
         <ion-menu-toggle>
-          <ion-item lines="none" routerLink="#">
-            <ion-label>Item two</ion-label>
-          </ion-item>
-        </ion-menu-toggle>
-        <ion-menu-toggle>
-          <ion-item lines="none" routerLink="#">
-            <ion-label>Item three</ion-label>
-          </ion-item>
-        </ion-menu-toggle>
-        <ion-menu-toggle>
-          <ion-item lines="none" routerLink="#">
-            <ion-label>Item four</ion-label>
+          <ion-item lines="none" routerLink="/about">
+            <ion-icon ios="ios-information-circle" md="md-information-circle" slot="start"></ion-icon>
+            <ion-label>About</ion-label>
           </ion-item>
         </ion-menu-toggle>
       </ion-list>
