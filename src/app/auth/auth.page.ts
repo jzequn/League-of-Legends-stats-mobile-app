@@ -6,8 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./auth.page.scss'],
 })
 export class AuthPage implements OnInit {
+  isLogin = true;
+  email = '';
+  password = '';
 
   constructor() { }
+
+  onSwitchAuthMode() {
+    this.isLogin = !this.isLogin;
+  }
+
 
   ngOnInit() {
   }

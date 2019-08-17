@@ -13,7 +13,9 @@
       <ion-card-header>
         <ion-card-title>Search a summoner</ion-card-title>
       </ion-card-header>
-      <ion-searchbar></ion-searchbar>
+      <ion-searchbar [(ngModel)]="search" (change)="getSearch($event);"></ion-searchbar>
     </ion-card-content>
   </ion-card>
+
+  <p>{{search}}</p>
 </ion-content>
