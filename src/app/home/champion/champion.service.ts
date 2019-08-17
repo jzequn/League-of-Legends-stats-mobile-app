@@ -38,7 +38,7 @@ export class ChampionService {
   }
 
   /**
-   * 
+   *
    * @param name should be image name.
    */
   imageUrl(name: string) {
@@ -47,12 +47,13 @@ export class ChampionService {
   }
 
   /**
-   * 
+   *
    * @param name shoudl be champion name
    */
   loadingImageUrl(name: string) {
     return `http://ddragon.leagueoflegends.com/cdn/img/champion/loading/${name}_0.jpg`;
   }
+
   // This will convert the champions fetched from lolAPis service to champions object list.
   createChampionObjectList(champions: object[]) {
     for (const champion of champions) {

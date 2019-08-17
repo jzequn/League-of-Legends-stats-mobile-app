@@ -3,10 +3,39 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/home/tabs/item"></ion-back-button>
     </ion-buttons>
-    <ion-title>Item Detail</ion-title>
+    <ion-title>{{item.name}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <ion-card>
+    <ion-card-header>
+      <ion-item>
+        <ion-title text-left>Gold</ion-title>
+        <ion-thumbnail slot="end">
+          <img src="{{imageUrl(item.image.full)}}">
+        </ion-thumbnail>
+      </ion-item>
+    </ion-card-header>
+    <ion-card-content>
+      <div>
+        <p>Base: {{item.gold.base}}</p>
+        <p>Purchasable: {{item.gold.purchasable}}</p>
+        <p>Sell: {{item.gold.sell}}</p>
+        <p>Toal: {{item.gold.total}}</p>
+      </div>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Categories</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <div>
+        <ul>
+          <li *ngFor="let tag of item.tags">{{tag}}</li>
+        </ul>
+      </div>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
