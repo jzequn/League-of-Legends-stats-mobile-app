@@ -18,7 +18,8 @@ const routes: Routes = [
                     {
                         path: ':summonerId',
                         loadChildren:
-                            './search/summoner/summoner.module#SummonerPageModule'
+                            // './search/summoner/summoner.module#SummonerPageModule'
+                            () => import('./search/summoner/summoner.module').then(m => m.SummonerPageModule)
 
                     }
                 ]
@@ -35,8 +36,8 @@ const routes: Routes = [
                     {
                         path: ':championId',
                         loadChildren:
-                            './champion/champion-detail/champion-detail.module#ChampionDetailPageModule'
-                        // () => import('./champion/champion.module').then(m => m.ChampionPageModule)
+                            // './champion/champion-detail/champion-detail.module#ChampionDetailPageModule'
+                            () => import('./champion/champion-detail/champion-detail.module').then(m => m.ChampionDetailPageModule)
                         // I dont know if issue will happen or not, just comment this out
                     }
                 ]
@@ -53,8 +54,8 @@ const routes: Routes = [
                     {
                         path: ':itemId',
                         loadChildren:
-                            './item/item-detail/item-detail.module#ItemDetailPageModule'
-                        // () => import('./champion/champion.module').then(m => m.ChampionPageModule)
+                            // './item/item-detail/item-detail.module#ItemDetailPageModule'
+                            () => import('./item/item-detail/item-detail.module').then(m => m.ItemDetailPageModule)
                     }
                 ]
             },

@@ -16,7 +16,7 @@
       <ion-col>
         <ion-card>
           <ion-card-content>
-            <ion-item *ngFor="let item of items" detail routerLink="#">
+            <ion-item *ngFor="let item of items" detail [routerLink]="['/','home','tabs','item',item.name]">
               <ion-thumbnail>
                 <img src="{{imageUrl(item.image.full)}}">
               </ion-thumbnail>

@@ -14,12 +14,18 @@
       <ion-col>
         <ion-card>
           <ion-card-content>
-            <ion-item *ngFor="let champion of champions" detail routerLink="#">
+            <ion-item *ngFor="let champion of champions" detail
+              [routerLink]="['/','home','tabs','champion',champion.id]" routerDirection="backward">
               <ion-thumbnail>
                 <img src="{{imageUrl(champion.image.full)}}">
               </ion-thumbnail>
-              <ion-label slot="end">{{champion.id}}</ion-label>
-              <!-- // {{champion.title}} -->
+              <!-- <ion-label slot="end">{{champion.id}}</ion-label>
+              <ion-label slot="end">{{champion.title}}</ion-label> -->
+
+              <div slot="end">
+                <p>{{champion.id}}</p>
+                <!-- <p>{{champion.title}}</p> -->
+              </div>
             </ion-item>
           </ion-card-content>
         </ion-card>

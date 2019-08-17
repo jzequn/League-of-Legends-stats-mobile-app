@@ -40,6 +40,6 @@ export class ItemService {
     //   console.log(item);
     // }
     console.log(this.itemList[0]);
-    console.log(this.itemList[0].image.full);
+    // console.log(this.itemList[0].image.full);
   }
 }

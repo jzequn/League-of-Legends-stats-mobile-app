@@ -1,5 +1,6 @@
 import { ChampionService } from './champion.service';
 import { Component, OnInit } from '@angular/core';
+import { Champion } from './champion.model';
 
 @Component({
   selector: 'app-champion',
@@ -8,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChampionPage implements OnInit {
 
-  champions: object[] = [];
+  champions: Champion[] = [];
 
   constructor(private championService: ChampionService) { }
 
@@ -22,7 +23,7 @@ export class ChampionPage implements OnInit {
   }
 
   imageUrl(name: string) {
-    return `https://ddragon.leagueoflegends.com/cdn/6.24.1/img/champion/${name}`;
+    return this.championService.imageUrl(name);
   }
 
 }
