@@ -15,27 +15,65 @@
       </ion-card-header>
       <ion-searchbar [(ngModel)]="search" (change)="getSearch($event);"></ion-searchbar>
     </ion-card-content>
-    <ion-button (click)="onClick()">Show</ion-button>
   </ion-card>
 
-  <ion-grid>
-    <ion-row *ngFor="let match of matchList">
-      <ion-col>
-        <!-- <ion-card>
-          <ion-card-content>
-            <ion-label slot="end">{{match.champion}}</ion-label>
-          </ion-card-content>
-        </ion-card> -->
-        <ion-item>
-          <ion-thumbnail>
-            <img src="{{imageUrl(match.champion)}}">
-          </ion-thumbnail>
-          <div>
-            <p>{{match.role}}</p>
-            <p>{{match.lane}}</p>
-          </div>
-        </ion-item>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+  <ion-card *ngFor="let match of matchList">
+    <ion-card-header>
+      Match id:{{match.gameId}}
+    </ion-card-header>
+    <ion-card-content>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-item>
+              <ion-label>
+                Match lane:
+              </ion-label>
+              <p>{{match.lane}}</p>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-item>
+              <ion-label>
+                Match queue:
+              </ion-label>
+              <p>{{match.queue}}</p>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-item>
+              <ion-label>
+                Match role:
+              </ion-label>
+              <p>{{match.role}}</p>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-item>
+              <ion-label>
+                Season:
+              </ion-label>
+              <p>{{match.season}}</p>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-item>
+              <ion-label>
+                Match lane:
+              </ion-label>
+              <p>{{match.timestamp | date}}</p>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

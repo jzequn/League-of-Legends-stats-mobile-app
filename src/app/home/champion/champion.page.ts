@@ -15,10 +15,10 @@ export class ChampionPage implements OnInit {
 
   ngOnInit() {
     // fetch the champions only once
-    if (this.championService.championList.length === 0) {
-      this.championService.fetchChampions();
-      this.champions = this.championService.championList;
-    }
+
+    this.championService.fetchChampions();
+    this.champions = this.championService.championList;
+
   }
 
   imageUrl(name: string) {

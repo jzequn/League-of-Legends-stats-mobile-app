@@ -28,8 +28,10 @@ export class ChampionService {
       )
       .subscribe(
         champions => { // champions is the data object from above.
-          this.collectChampionList(champions);
-          this.createChampionObjectList(this.championObjectList);
+          if (this.championList.length === 0) {
+            this.collectChampionList(champions);
+            this.createChampionObjectList(this.championObjectList);
+          }
         }
       );
 

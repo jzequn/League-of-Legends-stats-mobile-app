@@ -45,21 +45,23 @@ export class SearchPage implements OnInit {
   }
 
   imageUrl(championKey: string) {
-    console.log('championlist name', this.champions.length);
+    // console.log('championlist name', this.champions.length);
 
     console.log(championKey);
     const champion = this.findChampionImageNameByKey(championKey);
     const url = this.championService.imageUrl(champion);
-    console.log(url);
+    // console.log(url);
 
     return url;
   }
 
   findChampionImageNameByKey(key: string) {
-    let name = '';
-    name = this.champions.find(champ => champ.key === key).image.full;
-    console.log(name);
-    return name;
+    // let name = '';
+    const list = this.champions.find(champ => champ.key === key);
+
+
+    // console.log('list', list);
+    return null;
   }
 }
 
