@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { SummonerService } from './summoner.service';
+import { Match } from './match.model';
 
 @Component({
   selector: 'app-summoner',
@@ -7,9 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SummonerPage implements OnInit {
 
-  constructor() { }
+  matchList: Match[] = [];
+  constructor(private summonerService: SummonerService) { }
 
   ngOnInit() {
+    this.matchList = this.summonerService.matchList;
   }
 
 }

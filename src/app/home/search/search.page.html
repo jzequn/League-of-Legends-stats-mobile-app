@@ -15,7 +15,27 @@
       </ion-card-header>
       <ion-searchbar [(ngModel)]="search" (change)="getSearch($event);"></ion-searchbar>
     </ion-card-content>
+    <ion-button (click)="onClick()">Show</ion-button>
   </ion-card>
 
-  <p>{{search}}</p>
+  <ion-grid>
+    <ion-row *ngFor="let match of matchList">
+      <ion-col>
+        <!-- <ion-card>
+          <ion-card-content>
+            <ion-label slot="end">{{match.champion}}</ion-label>
+          </ion-card-content>
+        </ion-card> -->
+        <ion-item>
+          <ion-thumbnail>
+            <img src="{{imageUrl(match.champion)}}">
+          </ion-thumbnail>
+          <div>
+            <p>{{match.role}}</p>
+            <p>{{match.lane}}</p>
+          </div>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
